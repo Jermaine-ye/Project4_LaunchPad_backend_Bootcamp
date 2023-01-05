@@ -1,4 +1,4 @@
-const BaseController = require("./baseController");
+const BaseController = require('./baseController');
 
 class PostsController extends BaseController {
   constructor(model) {
@@ -11,23 +11,24 @@ class PostsController extends BaseController {
     try {
       const output = await this.model.findAll({
         where: { chapterId: chapterId },
+        order: [['id', 'ASC']],
         attributes: {
           include: [
             [
               this.model.sequelize.fn(
-                "to_char",
-                this.model.sequelize.col("createdAt"),
-                "DD-MM-YYYY HH24:MI:SS"
+                'to_char',
+                this.model.sequelize.col('createdAt'),
+                'DD-MM-YYYY HH24:MI:SS'
               ),
-              "createdAt",
+              'createdAt',
             ],
             [
               this.model.sequelize.fn(
-                "to_char",
-                this.model.sequelize.col("updatedAt"),
-                "DD-MM-YYYY HH24:MI:SS"
+                'to_char',
+                this.model.sequelize.col('updatedAt'),
+                'DD-MM-YYYY HH24:MI:SS'
               ),
-              "updatedAt",
+              'updatedAt',
             ],
           ],
         },
@@ -51,10 +52,12 @@ class PostsController extends BaseController {
   }
 
   async insertOne(req, res) {
-    const { author, authorName, authorImage, chapterId, content } = req.body;
+    const { author, sl, authorName, authorImage, chapterId, content } =
+      req.body;
     try {
       const newPost = await this.model.create({
         author: author,
+        sl: sl,
         authorName: authorName,
         authorImage: authorImage,
         chapterId: chapterId,
