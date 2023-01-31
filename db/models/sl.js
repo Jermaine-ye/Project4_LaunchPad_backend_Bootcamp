@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.appointment);
-      this.hasMany(models.memoEntry);
-      this.hasMany(models.blockedDate);
     }
   }
   Sl.init(
