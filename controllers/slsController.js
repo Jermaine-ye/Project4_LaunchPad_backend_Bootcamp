@@ -6,11 +6,8 @@ class SlsController extends BaseController {
   }
 
   async getOne(req, res) {
-    // const { id, sectionId } = req.query;
     try {
       const sl = await this.model.findOne({
-        // where: [{ cadetId: id }, { sectionId: sectionId }],
-        // include: { model: this.cadetSectionModel },
         where: {
           email: req.query.slEmail,
         },

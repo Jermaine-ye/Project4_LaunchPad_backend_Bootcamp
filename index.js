@@ -1,29 +1,29 @@
-const cors = require("cors");
-const express = require("express");
-require("dotenv").config();
+const cors = require('cors');
+const express = require('express');
+require('dotenv').config();
 
 // importing Routers
-const ChaptersRouter = require("./routers/chaptersRouter");
-const SectionsRouter = require("./routers/sectionsRouter");
-const CadetsRouter = require("./routers/cadetsRouter");
-const CadetSectionsRouter = require("./routers/cadetSectionsRouter");
-const CadetChaptersRouter = require("./routers/cadetChaptersRouter");
-const PostsRouter = require("./routers/postsRouter");
-const GitHubSubmissionsRouter = require("./routers/gitHubSubmissionsRouter");
-const SlsRouter = require("./routers/slsRouter");
+const ChaptersRouter = require('./routers/chaptersRouter');
+const SectionsRouter = require('./routers/sectionsRouter');
+const CadetsRouter = require('./routers/cadetsRouter');
+const CadetSectionsRouter = require('./routers/cadetSectionsRouter');
+const CadetChaptersRouter = require('./routers/cadetChaptersRouter');
+const PostsRouter = require('./routers/postsRouter');
+const GitHubSubmissionsRouter = require('./routers/gitHubSubmissionsRouter');
+const SlsRouter = require('./routers/slsRouter');
 
 // importing Controllers
-const ChaptersController = require("./controllers/chaptersController");
-const SectionsController = require("./controllers/sectionsController");
-const CadetsController = require("./controllers/cadetsController");
-const CadetSectionsController = require("./controllers/cadetSectionsController");
-const CadetChaptersController = require("./controllers/cadetChaptersController");
-const PostsController = require("./controllers/postsController");
-const GitHubSubmissionsController = require("./controllers/gitHubSubmissionsController");
-const SlsController = require("./controllers/slsController");
+const ChaptersController = require('./controllers/chaptersController');
+const SectionsController = require('./controllers/sectionsController');
+const CadetsController = require('./controllers/cadetsController');
+const CadetSectionsController = require('./controllers/cadetSectionsController');
+const CadetChaptersController = require('./controllers/cadetChaptersController');
+const PostsController = require('./controllers/postsController');
+const GitHubSubmissionsController = require('./controllers/gitHubSubmissionsController');
+const SlsController = require('./controllers/slsController');
 
 //import DB
-const db = require("./db/models/index");
+const db = require('./db/models/index');
 const {
   cadetChapter,
   cadetSection,
@@ -89,14 +89,14 @@ app.use(cors());
 app.use(express.json());
 
 //enable and use router
-app.use("/chapters", chaptersRouter);
-app.use("/sections", sectionsRouter);
-app.use("/cadets", cadetsRouter);
-app.use("/cadetSections", cadetSectionsRouter);
-app.use("/cadetChapters", cadetChaptersRouter);
-app.use("/posts", postsRouter);
-app.use("/gitHubSubmissions", gitHubSubmissionsRouter);
-app.use("/sls", slsRouter);
+app.use('/chapters', chaptersRouter);
+app.use('/sections', sectionsRouter);
+app.use('/cadets', cadetsRouter);
+app.use('/cadetSections', cadetSectionsRouter);
+app.use('/cadetChapters', cadetChaptersRouter);
+app.use('/posts', postsRouter);
+app.use('/gitHubSubmissions', gitHubSubmissionsRouter);
+app.use('/sls', slsRouter);
 
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);

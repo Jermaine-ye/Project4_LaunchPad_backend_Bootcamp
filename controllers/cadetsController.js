@@ -1,4 +1,4 @@
-const BaseController = require("./baseController");
+const BaseController = require('./baseController');
 
 class CadetsController extends BaseController {
   constructor(model, cadetSectionsModel, cadetChaptersModel, sectionsModel) {
@@ -24,11 +24,8 @@ class CadetsController extends BaseController {
   }
 
   async getOne(req, res) {
-    // const { id, sectionId } = req.query;
     try {
       const cadet = await this.model.findOne({
-        // where: [{ cadetId: id }, { sectionId: sectionId }],
-        // include: { model: this.cadetSectionModel },
         where: {
           email: req.query.cadetEmail,
         },

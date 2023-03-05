@@ -17,24 +17,6 @@ class SectionsController extends BaseController {
       return res.status(400).json({ error: true, msg: err });
     }
   }
-
-  // async getAllSectionChapters(req, res) {
-  //   const { sectionId } = req.query;
-  //   try {
-  //     const checkData = await this.model.findAll({
-  //       where: { sectionId: sectionId },
-  //       //added this to see if I can filter with section Id
-  //       include: [
-  //         { model: this.chapterModel, where: { sectionId: sectionId } },
-  //       ],
-  //     });
-  //     //////
-
-  //     return res.json(checkData);
-  //   } catch (err) {
-  //     return res.status(400).json({ error: true, msg: err });
-  //   }
-  // }
 }
 
 module.exports = SectionsController;
